@@ -1,0 +1,334 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../../assets/fonts/Inter-Bold.woff") format("woff"), url("../../assets/fonts/Inter-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../../assets/fonts/Inter-Regular.woff2") format("woff2"), url("../../assets/fonts/Inter-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../../assets/fonts/Inter-ExtraBold.woff2") format("woff2"), url("../../assets/fonts/Inter-ExtraBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  font-family: "Inter";
+}
+
+img {
+  max-width: 100%;
+  height: 100%;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+body {
+  padding: 60px;
+  overflow-x: hidden;
+  font-family: "Inter", Times, serif;
+}
+@media (max-width: 768px) {
+  body {
+    padding: 16px;
+  }
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  position: relative;
+}
+nav .nav-left h1 {
+  font-size: 60px;
+  font-weight: 900;
+  color: hsl(240, 100%, 5%);
+  line-height: 120%;
+}
+@media (max-width: 768px) {
+  nav .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -500px;
+    width: 60%;
+    transition: all 1s ease;
+    background-color: hsl(36, 100%, 99%);
+    padding: 100px 16px 16px 16px;
+    height: 100vh;
+  }
+  nav .nav-menu.open {
+    right: 16px;
+  }
+}
+nav .nav-menu ul {
+  display: flex;
+  gap: 42px;
+}
+nav .nav-menu ul li {
+  list-style: none;
+}
+nav .nav-menu ul li a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 100%;
+  color: hsl(233, 8%, 79%);
+}
+@media (max-width: 768px) {
+  nav .nav-menu ul li a {
+    color: hsl(240, 100%, 5%);
+  }
+}
+nav .nav-menu ul li a:hover {
+  cursor: pointer;
+  color: hsl(5, 85%, 63%);
+  transition: all 0.3s ease;
+}
+@media (max-width: 768px) {
+  nav .nav-menu ul {
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  nav .nav-menu ul {
+    flex-direction: column;
+  }
+}
+nav .nav-toggle {
+  display: none;
+  position: initial;
+}
+@media (max-width: 768px) {
+  nav .nav-toggle {
+    display: block;
+    right: 16px;
+    top: 16px;
+    cursor: pointer;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+  }
+  nav .nav-toggle .menu-icon,
+  nav .nav-toggle .close-icon {
+    width: 24px;
+    height: 24px;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+  nav .nav-toggle .hide-hamburger {
+    display: none;
+  }
+}
+nav .close-icon {
+  opacity: 0;
+}
+nav .close-icon.active {
+  opacity: 1;
+}
+
+main {
+  margin-bottom: 48px;
+}
+main .main-banner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: min-content 1fr;
+  grid-template-areas: "header header news" "content content news" "bottom bottom bottom";
+  gap: 24px;
+}
+@media (max-width: 768px) {
+  main .main-banner {
+    grid-template-columns: 1fr;
+    grid-template-areas: "header" "content" "news" "bottom";
+  }
+}
+main .main-banner .main-banner-top {
+  grid-area: header;
+}
+main .main-banner .main-banner-top .desktop-img {
+  background-image: url(/assets/images/image-web-3-desktop.jpg);
+  background-repeat: no-repeat;
+  background-position: right center;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  main .main-banner .main-banner-top .desktop-img {
+    display: none;
+  }
+}
+main .main-banner .main-banner-top .mobile-img {
+  display: none;
+}
+@media (max-width: 768px) {
+  main .main-banner .main-banner-top .mobile-img {
+    display: block;
+    background-image: url(/assets/images/image-web-3-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: right center;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+}
+main .main-banner .main-news {
+  grid-area: news;
+  padding: 24px;
+  background-color: hsl(240, 100%, 5%);
+  color: wheat;
+}
+main .main-banner .main-news h1 {
+  font-size: 42px;
+  color: hsl(35, 77%, 62%);
+  line-height: 130%;
+  font-weight: 800;
+}
+main .main-banner .main-news .news-box {
+  padding: 32px 0;
+  border-bottom: 1px solid hsl(236, 13%, 42%);
+}
+main .main-banner .main-news .news-box h3 {
+  font-size: 24px;
+  line-height: 120%;
+  margin-bottom: 16px;
+  color: hsl(36, 100%, 99%);
+  font-weight: 700;
+}
+main .main-banner .main-news .news-box h3:hover {
+  cursor: pointer;
+  color: hsl(35, 77%, 62%);
+  transition: all 0.3s ease;
+}
+main .main-banner .main-news .news-box p {
+  font-size: 16px;
+  line-height: 120%;
+  color: hsl(233, 8%, 79%);
+  font-weight: 400;
+}
+main .main-banner .main-news .news-box:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+main .main-banner .main-banner-content {
+  grid-area: content;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 768px) {
+  main .main-banner .main-banner-content {
+    grid-template-columns: 1fr;
+  }
+}
+main .main-banner .main-banner-content h1 {
+  font-size: 60px;
+  padding-right: 36px;
+  color: hsl(240, 100%, 5%);
+  line-height: 100%;
+  font-weight: 900;
+}
+main .main-banner .main-banner-content .banner-content {
+  padding: 0 12px;
+}
+@media (max-width: 768px) {
+  main .main-banner .main-banner-content .banner-content {
+    padding: 0;
+  }
+}
+main .main-banner .main-banner-content .banner-content p {
+  color: hsl(233, 8%, 79%);
+  font-size: 20px;
+  line-height: 150%;
+  font-weight: 700;
+}
+main .main-banner .main-banner-content .banner-content .btn-content {
+  padding: 18px 32px;
+  background-color: hsl(240, 100%, 5%);
+  margin-top: 24px;
+  display: inline-block;
+  letter-spacing: 8px;
+}
+@media (max-width: 768px) {
+  main .main-banner .main-banner-content .banner-content .btn-content {
+    background-color: hsl(5, 85%, 63%);
+  }
+}
+main .main-banner .main-banner-content .banner-content .btn-content a {
+  color: hsl(36, 100%, 99%);
+  font-weight: 700;
+  line-height: 100%;
+  text-decoration: none;
+  font-size: 18px;
+}
+main .main-banner .main-banner-bottom {
+  grid-area: bottom;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+  margin-top: 42px;
+}
+@media (max-width: 768px) {
+  main .main-banner .main-banner-bottom {
+    grid-template-columns: 1fr;
+  }
+}
+main .main-banner .main-banner-bottom .main-banner-bottom-box {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  gap: 16px;
+  align-items: center;
+}
+main .main-banner .main-banner-bottom .main-banner-bottom-box img {
+  background-size: cover;
+}
+main .main-banner .main-banner-bottom .main-banner-bottom-box .main-banner-bottom-box-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+main .main-banner .main-banner-bottom .main-banner-bottom-box .main-banner-bottom-box-content h3 {
+  font-size: 28px;
+  color: hsl(233, 8%, 79%);
+  line-height: 120%;
+  font-weight: 800;
+}
+main .main-banner .main-banner-bottom .main-banner-bottom-box .main-banner-bottom-box-content h4 {
+  color: hsl(240, 100%, 5%);
+  line-height: 100%;
+  font-weight: 800;
+  font-size: 16px;
+}
+main .main-banner .main-banner-bottom .main-banner-bottom-box .main-banner-bottom-box-content h4:hover {
+  cursor: pointer;
+  color: hsl(5, 85%, 63%);
+  transition: all 0.3s ease-in;
+}
+main .main-banner .main-banner-bottom .main-banner-bottom-box .main-banner-bottom-box-content p {
+  color: hsl(233, 8%, 79%);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}/*# sourceMappingURL=style.css.map */
